@@ -11,6 +11,6 @@ while True:
 
     name = client.recv(1024).decode()
     print(name)
-    client.send(b'20171528')
+    client.send(int(20171528).to_bytes(4, 'big'))
 
     client.close()

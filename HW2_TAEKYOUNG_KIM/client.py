@@ -7,7 +7,7 @@ msg = sock.recv(1024)
 print(msg.decode())
 
 sock.send(b'Taekyoung Kim')
-studentNum = sock.recv(1024).decode()
+studentNum = int.from_bytes(sock.recv(1024), 'big')
 print(studentNum)
 
 sock.close()
