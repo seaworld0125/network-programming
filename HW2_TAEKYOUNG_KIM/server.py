@@ -8,4 +8,9 @@ while True:
     client, addr = s.accept()
     print('Connection from ', addr)
     client.send(b'Hello ' + addr[0].encode())
+
+    name = client.recv(1024).decode()
+    print(name)
+    client.send(b'20171528')
+
     client.close()
