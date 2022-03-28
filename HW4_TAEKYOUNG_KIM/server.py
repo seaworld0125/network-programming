@@ -1,5 +1,3 @@
-from email import header
-import errno
 import mimetypes
 from socket import *
 
