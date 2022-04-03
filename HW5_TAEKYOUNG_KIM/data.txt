@@ -1,0 +1,10 @@
+Mon Apr  4 00:42:02 2022: Device1: Temp=34, Humid=44, Temp=100
+Mon Apr  4 00:42:03 2022: Device2: Heartbeat=129, Steps=2868, Cal=2910
+Mon Apr  4 00:42:10 2022: Device2: Heartbeat=77, Steps=3912, Cal=1062
+Mon Apr  4 00:42:11 2022: Device1: Temp=17, Humid=16, Temp=105
+Mon Apr  4 00:42:12 2022: Device2: Heartbeat=106, Steps=3797, Cal=1742
+Mon Apr  4 00:42:12 2022: Device1: Temp=13, Humid=2, Temp=89
+Mon Apr  4 00:42:13 2022: Device2: Heartbeat=139, Steps=5042, Cal=3007
+Mon Apr  4 00:42:14 2022: Device1: Temp=18, Humid=78, Temp=78
+Mon Apr  4 00:42:14 2022: Device2: Heartbeat=85, Steps=3743, Cal=3725
+Mon Apr  4 00:42:15 2022: Device1: Temp=6, Humid=62, Temp=115
