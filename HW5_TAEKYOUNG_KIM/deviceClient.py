@@ -1,6 +1,4 @@
-from asyncio.windows_utils import BUFSIZE
 from socket import *
-import os.path
 import time
 
 def recreateData(data, port):
