@@ -21,17 +21,16 @@ def popData(index):
 
 port = 2500
 BUFSIZE = 1024
-
-sock = socket(AF_INET, SOCK_STREAM)
-sock.bind(('', port))
-sock.listen(5)
     
 while True:
-    conn, addr = sock.accept()
-    data = conn.recv(BUFSIZE).decode().split(' ')
+    sock = socket(AF_INET, SOCK_DGRAM)
+    sock.bind(('', port))
+
+    data, addr = sock.recvfrom(BUFSIZE)
+    data = data.decode().split(' ')
 
     if(data[0] == 'quit'):
-        conn.close()
+        sock.close()
         break
 
     try:
@@ -50,11 +49,9 @@ while True:
             msg = popData(index)
         else:
             msg = 'message error : bad order'
-        conn.send(msg.encode())
+        sock.sendto(msg.encode(), addr)
               
     except Exception as e:
-        conn.send('message error'.encode())
+        sock.sendto('message error'.encode(), addr)
 
-    conn.close()
-
-sock.close()
+    sock.close()
