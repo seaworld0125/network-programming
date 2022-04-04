@@ -43,15 +43,15 @@ while True:
             for d in data[2:]: # msg append
                 msg += (d + ' ')
             if msg == '':
-                conn.send('input error : no message'.encode())
+                msg = 'input error : no message'
             else :
                 msg = storageData(msg, index)
-                conn.send(msg.encode())
         elif order == 'receive':
             msg = popData(index)
-            conn.send(msg.encode())
         else:
-            conn.send('message error : bad order'.encode())        
+            msg = 'message error : bad order'
+        conn.send(msg.encode())
+              
     except Exception as e:
         conn.send('message error'.encode())
 
