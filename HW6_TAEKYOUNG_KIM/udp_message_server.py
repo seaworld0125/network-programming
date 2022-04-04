@@ -52,6 +52,6 @@ while True:
         sock.sendto(msg.encode(), addr)
               
     except Exception as e:
-        sock.sendto('message error'.encode(), addr)
+        sock.sendto('Exception error'.encode(), addr)
 
     sock.close()
