@@ -23,19 +23,38 @@ while True:
             continue
         else:
             break
-
-    c_sock.settimeout(9)
-    try:
+    
+    if reTx >= 4:
         while True:
-            data, _ = c_sock.recvfrom(BUFF_SIZE)
-        
-            if random.random() <= 0.5:
+            c_sock.sendto('exit'.encode(), addr)
+            c_sock.settimeout(1)
+            try:
+                data, _ = c_sock.recvfrom(BUFF_SIZE)
+            except timeout:
                 continue
             else:
-                c_sock.sendto(b'ack', addr)
-                print('<-', data.decode())
                 break
-    except:
-        print('연결 상태가 양호하지 않습니다')
+        print('exit system : bad connection')
         break
+
+    c_sock.settimeout(None)
+    endFlag = False
+    while True:
+        data, _ = c_sock.recvfrom(BUFF_SIZE)
+        msg = data.decode()
+    
+        if random.random() <= 0.85:
+            continue
+        else:
+            if msg == 'exit':
+                endFlag = True
+            else:
+                print('<-', msg)
+            c_sock.sendto(b'ack', addr)
+            break
+
+    if endFlag:
+        print('exit system : bad connection')
+        break
+    
 c_sock.close()
