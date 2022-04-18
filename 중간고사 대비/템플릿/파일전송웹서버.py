@@ -45,7 +45,6 @@ def clientConnect(sock):
 sock = socket(AF_INET, SOCK_STREAM)
 sock.bind(('', 80))
 sock.listen(5)
-sock.settimeout(5)
 try:
     clientConnect(sock)
 except:
