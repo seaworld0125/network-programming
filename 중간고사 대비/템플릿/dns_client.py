@@ -24,10 +24,10 @@ class DnsClient:
         ip_addr = socket.inet_ntoa(rr_unpack[5])
         print(self.domainName, ip_addr)
 
-    def query(self): # create dns qeury
+    def query(self): # create dns query
         query = struct.pack('!HH', self.TransactionId, self.Flag)
         query += struct.pack('!HH', self.Questions, self.AnswerRRs)
-        qeury += struct.pack('!HH', self.AuthorityRRs, self.AdditionalRRs)
+        query += struct.pack('!HH', self.AuthorityRRs, self.AdditionalRRs)
 
         part = self.domainName.split('.')
 

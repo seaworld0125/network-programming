@@ -21,10 +21,12 @@ socket.htons(x) 2바이트 양의 정수를 호스트 바이트 순서에서 네
                 바이트 순서로 변환
 '''
 
-a = 1234
+a = 32
 htonlA = socket.htonl(a)
 ntohlA = socket.ntohl(htonlA)
 
 print(a)
 print(htonlA)
 print(ntohlA)
+
+print(a.to_bytes(4, 'big'))

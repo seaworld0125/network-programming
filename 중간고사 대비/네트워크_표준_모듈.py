@@ -25,3 +25,5 @@ P(socket.gethostbyname(socket.gethostname()))
 P(socket.gethostbyname_ex('homepage.sch.ac.kr'))
 
 P(socket.getfqdn('220.69.189.98'))
+
+P(socket.getfqdn('142.251.42.131'))
