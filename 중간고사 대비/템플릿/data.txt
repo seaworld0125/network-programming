@@ -1,1 +1,0 @@
-Tue Apr 19 09:19:51 2022: Device1: Temp=7, Humid=66, Illum148Tue Apr 19 09:19:54 2022: Device1: Temp=28, Humid=92, Illum91
